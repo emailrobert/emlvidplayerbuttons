@@ -46,6 +46,10 @@ media_player.set_media_list(media_list)
 # Play the black boxplay ready loop
 media_player.play_item_at_index(4)
 print("Waiting for button input...")
+value = mplayer.audio_output_device_enum()
+# printing value
+print("Audio Output Devices: ")
+print(value)
 
 while True:
     # If side button is pressed reboot the system
