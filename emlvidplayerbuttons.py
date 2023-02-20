@@ -43,10 +43,13 @@ media_player.set_media_list(media_list)
 print("Waiting for button input...")
 
 while True:
-    if GPIO.input(7) == GPIO.HIGH:
-        print("Pin 7 is HIGH")
+    if GPIO.input(7) == GPIO.HIGH and GPIO.input(13) == GPIO.LOW:
+        print("Pin 7 is HIGH / Side Button")
         mplayer.toggle_fullscreen()
-    if GPIO.input(13) == GPIO.HIGH:
+    if GPIO.input(7) == GPIO.HIGH and GPIO.input(13) == GPIO.HIGH:
+        print("Pin 7 is HIGH")
+        mplayer.set_fullscreen(False)
+    if GPIO.input(13) == GPIO.HIGH and GPIO.input(7) == GPIO.LOW:
         print("Pin 13 is HIGH / Yellow Button")
         if current_index == 1:
             if media_player.is_playing() == 0:
