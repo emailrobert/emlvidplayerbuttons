@@ -2,6 +2,6 @@
 Version=1.0
 Name=ButtonMedia
 Comment=Load the button media box
-Exec=/home/medialab/pyprojects/emlvidplayerbuttons/launcher.sh
+Exec=/home/medialab/pyprojects/emlvidplayerbuttons/emlvidplayerbuttonslauncher.sh
 Type=Application
 Terminal=false
