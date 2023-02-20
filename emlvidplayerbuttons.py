@@ -49,16 +49,17 @@ while True:
         mplayer.toggle_fullscreen()
     if GPIO.input(11) == GPIO.HIGH:
         print("Pin 11 is HIGH")
-        if current_index == 1:
-            if media_player.is_playing() == 0:
-                if media_player.get_state() == 4:
-                    media_player.play()
-                if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-                    media_player.play_item_at_index(0)
-            else: 
-                media_player.pause()
-        else:
-            media_player.play_item_at_index(0)
+        # if current_index == 1:
+        #     if media_player.is_playing() == 0:
+        #         if media_player.get_state() == 4:
+        #             media_player.play()
+        #         if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
+        #             media_player.play_item_at_index(0)
+        #     else: 
+        #         media_player.pause()
+        # else:
+        #     media_player.play_item_at_index(0)
+        break
         current_index = 1
     if GPIO.input(13) == GPIO.HIGH:
         print("Pin 13 is HIGH")
