@@ -46,7 +46,7 @@ while True:
     if GPIO.input(7) == GPIO.HIGH:
         print("Pin 7 is HIGH")
         # os.system('reboot')
-        break
+        mplayer.set_fullscreen(True)
     if GPIO.input(11) == GPIO.HIGH:
         print("Pin 11 is HIGH")
         if current_index == 1:
@@ -100,4 +100,4 @@ while True:
             media_player.play_item_at_index(3)
             current_index = 4
     sleep(0.15)
-print("Program in complete...")
+print("Program is complete...")
