@@ -46,57 +46,57 @@ while True:
     if GPIO.input(7) == GPIO.HIGH:
         print("Pin 7 is HIGH")
         mplayer.toggle_fullscreen()
-    if GPIO.input(11) == GPIO.HIGH:
-        print("Pin 11 is HIGH")
-        # if current_index == 1:
-        #     if media_player.is_playing() == 0:
-        #         if media_player.get_state() == 4:
-        #             media_player.play()
-        #         if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-        #             media_player.play_item_at_index(0)
-        #     else: 
-        #         media_player.pause()
-        # else:
-        #     media_player.play_item_at_index(0)
-        current_index = 1
     if GPIO.input(13) == GPIO.HIGH:
-        print("Pin 13 is HIGH")
-        # if current_index == 2:
-        #     if media_player.is_playing() == 0:
-        #         if media_player.get_state() == 4:
-        #             media_player.play()
-        #         if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-        #             media_player.play_item_at_index(1)
-        #     else: 
-        #         media_player.pause()
-        # else:
-        #     media_player.play_item_at_index(1)
+        print("Pin 13 is HIGH / Yellow Button")
+        if current_index == 1:
+            if media_player.is_playing() == 0:
+                if media_player.get_state() == 4:
+                    media_player.play()
+                if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
+                    media_player.play_item_at_index(0)
+            else: 
+                media_player.pause()
+        else:
+            media_player.play_item_at_index(0)
+        current_index = 1
+    if GPIO.input(11) == GPIO.HIGH:
+        print("Pin 11 is HIGH / Black Button")
+        if current_index == 2:
+            if media_player.is_playing() == 0:
+                if media_player.get_state() == 4:
+                    media_player.play()
+                if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
+                    media_player.play_item_at_index(1)
+            else: 
+                media_player.pause()
+        else:
+            media_player.play_item_at_index(1)
         current_index = 2
     if GPIO.input(15) == GPIO.HIGH:
-        print("Pin 15 is HIGH")
-        # if current_index == 3:
-        #     if media_player.is_playing() == 0:
-        #         if media_player.get_state() == 4:
-        #             media_player.play()
-        #         if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-        #             media_player.play_item_at_index(2)
-        #     else: 
-        #         media_player.pause()
-        # else:
-        #     media_player.play_item_at_index(2)
+        print("Pin 15 is HIGH / White Button")
+        if current_index == 3:
+            if media_player.is_playing() == 0:
+                if media_player.get_state() == 4:
+                    media_player.play()
+                if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
+                    media_player.play_item_at_index(2)
+            else: 
+                media_player.pause()
+        else:
+            media_player.play_item_at_index(2)
         current_index = 3
     if GPIO.input(16) == GPIO.HIGH:
-        print("Pin 16 is HIGH")
-        # if current_index == 4:
-        #     if media_player.is_playing() == 0:
-        #         if media_player.get_state() == 4:
-        #             media_player.play()
-        #         if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-        #             media_player.play_item_at_index(3)
-        #     else: 
-        #         media_player.pause()
-        # else:
-        #     media_player.play_item_at_index(3)
+        print("Pin 16 is HIGH / Blue Button")
+        if current_index == 4:
+            if media_player.is_playing() == 0:
+                if media_player.get_state() == 4:
+                    media_player.play()
+                if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
+                    media_player.play_item_at_index(3)
+            else: 
+                media_player.pause()
+        else:
+            media_player.play_item_at_index(3)
         current_index = 4
     sleep(0.15)
 print("Program is complete...")
