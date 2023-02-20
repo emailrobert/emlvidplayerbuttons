@@ -30,7 +30,7 @@ current_index = -1
 player = vlc.Instance()
 media_player = vlc.MediaListPlayer()
 mplayer = player.media_player_new()
-mplayer.set_fullscreen(True)
+mplayer.toggle_fullscreen()
 media_player.set_media_player(mplayer)
 media_list = player.media_list_new()
 
@@ -46,7 +46,7 @@ while True:
     if GPIO.input(7) == GPIO.HIGH:
         print("Pin 7 is HIGH")
         # os.system('reboot')
-        mplayer.set_fullscreen(True)
+        mplayer.toggle_fullscreen()
     if GPIO.input(11) == GPIO.HIGH:
         print("Pin 11 is HIGH")
         if current_index == 1:
