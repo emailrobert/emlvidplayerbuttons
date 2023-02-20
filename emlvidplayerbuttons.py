@@ -34,6 +34,9 @@ mplayer.set_fullscreen(True)
 media_player.set_media_player(mplayer)
 media_list = player.media_list_new()
 
+media = player.media_new("/home/medialab/pyprojects/emlvidplayerbuttons/emlboxplay_ready_loop.mp4")
+media_list.add_media(media)
+
 for v in video_list:
     media = player.media_new(v)
     media_list.add_media(media)
@@ -61,11 +64,11 @@ while True:
                 if media_player.get_state() == 4:
                     media_player.play()
                 if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-                    media_player.play_item_at_index(0)
+                    media_player.play_item_at_index(1)
             else: 
                 media_player.pause()
         else:
-            media_player.play_item_at_index(0)
+            media_player.play_item_at_index(1)
         current_index = 1
     
     # If top black button is pressed launch 2nd video
@@ -76,11 +79,11 @@ while True:
                 if media_player.get_state() == 4:
                     media_player.play()
                 if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-                    media_player.play_item_at_index(1)
+                    media_player.play_item_at_index(2)
             else: 
                 media_player.pause()
         else:
-            media_player.play_item_at_index(1)
+            media_player.play_item_at_index(2)
         current_index = 2
     
     #If white button is pressed launch 3rd video
@@ -91,11 +94,11 @@ while True:
                 if media_player.get_state() == 4:
                     media_player.play()
                 if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-                    media_player.play_item_at_index(2)
+                    media_player.play_item_at_index(3)
             else: 
                 media_player.pause()
         else:
-            media_player.play_item_at_index(2)
+            media_player.play_item_at_index(3)
         current_index = 3
     
     # If blue button is pressed launch 4th video
@@ -106,11 +109,11 @@ while True:
                 if media_player.get_state() == 4:
                     media_player.play()
                 if media_player.get_state() == 5 or media_player.get_state() == 6 or media_player.get_state() == 7:
-                    media_player.play_item_at_index(3)
+                    media_player.play_item_at_index(4)
             else: 
                 media_player.pause()
         else:
-            media_player.play_item_at_index(3)
+            media_player.play_item_at_index(4)
         current_index = 4
     sleep(0.15)
 print("Program is complete...")
