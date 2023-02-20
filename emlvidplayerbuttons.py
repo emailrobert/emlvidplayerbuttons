@@ -43,6 +43,8 @@ for v in video_list:
     
 media_player.set_media_list(media_list)
 
+# Play the black boxplay ready loop
+media_player.play_item_at_index(0)
 print("Waiting for button input...")
 
 while True:
