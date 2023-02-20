@@ -30,7 +30,7 @@ current_index = -1
 player = vlc.Instance()
 media_player = vlc.MediaListPlayer()
 mplayer = player.media_player_new()
-mplayer.toggle_fullscreen()
+mplayer.set_fullscreen(True)
 media_player.set_media_player(mplayer)
 media_list = player.media_list_new()
 
@@ -43,12 +43,17 @@ media_player.set_media_list(media_list)
 print("Waiting for button input...")
 
 while True:
+    # If side button is pressed reboot the system
     if GPIO.input(7) == GPIO.HIGH and GPIO.input(13) == GPIO.LOW:
         print("Pin 7 is HIGH / Side Button")
-        mplayer.toggle_fullscreen()
-    if GPIO.input(7) == GPIO.HIGH and GPIO.input(13) == GPIO.HIGH:
+        os.system("reboot")
+
+    # If both the yellow and black are pressed together return to desktop
+    if GPIO.input(11) == GPIO.HIGH and GPIO.input(13) == GPIO.HIGH:
         print("Pin 7 is HIGH")
         mplayer.set_fullscreen(False)
+    
+    # If yellow button is pressed launch 1st video
     if GPIO.input(13) == GPIO.HIGH and GPIO.input(7) == GPIO.LOW:
         print("Pin 13 is HIGH / Yellow Button")
         if current_index == 1:
@@ -62,6 +67,8 @@ while True:
         else:
             media_player.play_item_at_index(0)
         current_index = 1
+    
+    # If top black button is pressed launch 2nd video
     if GPIO.input(11) == GPIO.HIGH:
         print("Pin 11 is HIGH / Black Button")
         if current_index == 2:
@@ -75,6 +82,8 @@ while True:
         else:
             media_player.play_item_at_index(1)
         current_index = 2
+    
+    #If white button is pressed launch 3rd video
     if GPIO.input(15) == GPIO.HIGH:
         print("Pin 15 is HIGH / White Button")
         if current_index == 3:
@@ -88,6 +97,8 @@ while True:
         else:
             media_player.play_item_at_index(2)
         current_index = 3
+    
+    # If blue button is pressed launch 4th video
     if GPIO.input(16) == GPIO.HIGH:
         print("Pin 16 is HIGH / Blue Button")
         if current_index == 4:
