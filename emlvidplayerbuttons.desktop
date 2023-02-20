@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=1.0
+Name=ButtonMedia
+Comment=Load the button media box
+Exec=/home/medialab/pyprojects/videobuttonplayer/launcher.sh
+Type=Application
+Terminal=false
