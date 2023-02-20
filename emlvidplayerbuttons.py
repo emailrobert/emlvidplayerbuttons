@@ -40,7 +40,7 @@ for v in video_list:
     
 media_player.set_media_list(media_list)
 
-print("Waiting for button input...")
+print("Waiting for the button input...")
 
 while True:
     if GPIO.input(7) == GPIO.HIGH:
