@@ -40,12 +40,13 @@ for v in video_list:
     
 media_player.set_media_list(media_list)
 
-print("Waiting for Robert button input...")
+print("Waiting for button input...")
 
 while True:
     if GPIO.input(7) == GPIO.HIGH:
         print("Pin 7 is HIGH")
-        os.system('reboot')
+        # os.system('reboot')
+        break
     if GPIO.input(11) == GPIO.HIGH:
         print("Pin 11 is HIGH")
         if current_index == 1:
