@@ -64,7 +64,7 @@ print("Waiting for button input...")
 while True:
     # If side button is pressed reboot the system
     if GPIO.input(gpio_reboot_pin) == GPIO.HIGH:
-        print("Reboot pin (" + gpio_reboot_pin + ") has been pressed")
+        print("Reboot pin has been pressed")
         os.system("reboot")
 
     # If both the yellow and black are pressed together return to desktop
@@ -74,7 +74,7 @@ while True:
     
     # If yellow button is pressed launch 1st video
     if GPIO.input(video_1_pin) == GPIO.HIGH:
-        print("Video Button 1 / GPIO Pin (" + video_1_pin + ") has been pressed")
+        print("Video Button 1 has been pressed")
         if current_index == 1:
             if media_player.is_playing() == 0:
                 if media_player.get_state() == 4:
@@ -89,7 +89,7 @@ while True:
     
     # If top black button is pressed launch 2nd video
     if GPIO.input(video_2_pin) == GPIO.HIGH:
-        print("Video Button 2 / GPIO Pin (" + video_2_pin + ") has been pressed")
+        print("Video Button 2 has been pressed")
         if current_index == 2:
             if media_player.is_playing() == 0:
                 if media_player.get_state() == 4:
@@ -104,7 +104,7 @@ while True:
     
     #If white button is pressed launch 3rd video
     if GPIO.input(video_3_pin) == GPIO.HIGH:
-        print("Video 3 / GPIO Pin (" + video_3_pin + ") has been pressed")
+        print("Video 3 has been pressed")
         if current_index == 3:
             if media_player.is_playing() == 0:
                 if media_player.get_state() == 4:
@@ -119,7 +119,7 @@ while True:
     
     # If blue button is pressed launch 4th video
     if GPIO.input(video_4_pin) == GPIO.HIGH:
-        print("Video 4 / GPIO Pin (" + video_4_pin + ") has been pressed")
+        print("Video 4 has been pressed")
         if current_index == 4:
             if media_player.is_playing() == 0:
                 if media_player.get_state() == 4:
