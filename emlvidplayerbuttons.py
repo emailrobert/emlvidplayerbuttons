@@ -18,7 +18,6 @@ video_exts = ('.mp4', '.m4v', '.mov', '.avi', '.mkv') #Extensions the app will s
 # There is no code below here that needs to be changed 
 #
 
-
 # This code delays the Boxplay code from running until the USB
 # drive has mounted
 haveDrive = False
