@@ -58,7 +58,7 @@ media_list.add_media(media)
 media_player.set_media_list(media_list)
 
 # Play the black boxplay ready loop
-media_player.play_item_at_index(4)
+# media_player.play_item_at_index(4)
 print("Waiting for button input...")
 
 while True:
