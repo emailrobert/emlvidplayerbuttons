@@ -62,12 +62,12 @@ media_player.set_media_list(media_list)
 print("Waiting for button input...")
 
 while True:
-    # If side button is pressed reboot the system
-    if GPIO.input(gpio_reboot_pin) == GPIO.HIGH:
-        print("Reboot pin has been pressed")
+    # If both the 3 & 4 are pressed reboot the system
+    if GPIO.input(video_3_pin) == GPIO.HIGH and GPIO.input(video_4_pin) == GPIO.HIGH:
+        print("Reboot button sequence has been pressed")
         # os.system("reboot")
 
-    # If both the yellow and black are pressed together return to desktop
+    # If both the 1 & 2 are pressed together return to desktop
     if GPIO.input(video_1_pin) == GPIO.HIGH and GPIO.input(video_2_pin) == GPIO.HIGH:
         print("Exit fullscreen button sequnce has been pressed")
         # mplayer.set_fullscreen(False)
