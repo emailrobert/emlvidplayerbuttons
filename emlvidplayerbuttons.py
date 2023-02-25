@@ -18,7 +18,6 @@ video_exts = ('.mp4', '.m4v', '.mov', '.avi', '.mkv') #Extensions the app will s
 # There is no code below here that needs to be changed 
 #
 
-
 # This code delays the Boxplay code from running until the USB
 # drive has mounted
 haveDrive = False
@@ -64,7 +63,7 @@ print("Waiting for button input...")
 while True:
     # If both the 3 & 4 are pressed reboot the system
     if GPIO.input(video_3_pin) == GPIO.HIGH and GPIO.input(video_4_pin) == GPIO.HIGH:
-        print("Reboot button sequence has been pressed")
+        print("Reboot button 3/4 sequence has been pressed")
         os.system("reboot")
 
     # If both the 1 & 2 are pressed together return to desktop
